@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageContainer" representedClassName="ImageContainer" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sight" representedClassName="Sight" syncable="YES">
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longDescr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sightResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SightResponse" inverseName="items" inverseEntity="SightResponse" syncable="YES"/>
+    </entity>
+    <entity name="SightResponse" representedClassName="SightResponse" syncable="YES">
+        <attribute name="nextOffset" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="totalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Sight" inverseName="sightResponse" inverseEntity="Sight" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ImageContainer" positionX="-54" positionY="27" width="128" height="75"/>
+        <element name="Sight" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="SightResponse" positionX="-54" positionY="18" width="128" height="90"/>
+    </elements>
+</model>
